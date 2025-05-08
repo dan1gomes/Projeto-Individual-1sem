@@ -10,6 +10,7 @@ header{
     position: fixed;
     display: flex;
     justify-content: space-between;
+    transition: 1s ease;
 }
 #logoIcon{
     width: 4.5vw;
@@ -34,6 +35,8 @@ nav a{
     text-decoration: none;
     display: inline-block;
     padding: 20px 30px;
+    font-family: "Prosto One", sans-serif;
+    font-weight: 100;
     
 }
 nav a:hover{
@@ -43,14 +46,15 @@ nav a:hover{
 #cadastro{
     padding: 12px 32px; 
     background-color: rgb(209, 29, 29);
-    font-family: "Cal Sans", sans-serif;
-    font-weight: bold;
+    font-family: "Prosto One", sans-serif;
     border-radius: 6px;
     color: whitesmoke;
+    border-color: rgb(209, 29, 29);
 }
 #cadastro:hover{
     cursor: pointer;
     background-color: rgba(240, 112, 83, 0.825);
+    border-color: rgba(240, 112, 83, 0.825);
 }
 #telaInicial {
     height: 96vh;
@@ -67,14 +71,19 @@ nav a:hover{
     font-weight: bold;
     text-align: center;
     padding: 2vw;
+    font-family: "Prosto One", sans-serif;
+    font-weight: 600;
+    
 }
-
 #pInicio {
     color: white;
-    font-size: 1.2vw;
+    font-size: 1.0vw;
     text-align: center;
     padding: 0vw;
-    display: flexbox;
+    width: 100%;
+    font-family: "Prosto One", sans-serif;
+    font-weight: 100;
+
 }
 #copia {
     color: #ffffff96;
@@ -85,23 +94,23 @@ nav a:hover{
     text-align: center;
 }
 #historia{
-    background-color: black;
+    background-color: rgb(10, 10, 10);
     padding: 50px 20px;
     position: relative;
-    min-height: 700px;
+    min-height: 400px;
 }
 .containerH{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-    padding-left: 50px;
-    min-height: 700%;
+    min-height: 400%;
 }
 .bloco{
-    background-color: rgba(255, 255, 255, 0.721);
-    width: 60vw;
-    height: 400px;
+    margin-left: 0%;
+    margin-top: 1.6%;
+    background-color: rgb(218, 214, 214);
+    width: 57vw;
+    height: 470px;
     padding: 25px;
     border-radius: 10px;
     text-align: justify;
@@ -109,8 +118,7 @@ nav a:hover{
     flex-direction: column; 
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 998;
 }
 .imagemH{
     max-width: 500px;
@@ -118,36 +126,120 @@ nav a:hover{
     border-radius: 10px;
 }
 #h2historia{
-    margin-top: 0%;
-    font-size: 2.5vw;
+    font-size: 2.0vw;
     color: rgb(255, 255, 255);
     font-weight: bold;
-    text-align: center;
-    padding: 1vw; 
+    text-align: left;
+    font-family: "Prosto One", sans-serif;
+    font-weight: 600;
     overflow: hidden;
 }
 #pHistoria {
-    writing-mode: horizontal-tb;
     color: black;
-    font-size: 1.3vw;
-    line-height: 1.7;
-    text-align: center;
+    font-size: 1.4vw;
+    line-height: 1.5;
+    text-align: justify;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
     padding: 0vw;
-    display: flexbox;
    
 }
-#copiah {
+
+#imagemcomocomecou{
+    margin-top: 5%;
+    width: 50vw;
+    height: 30%;
+    float: right;    
+    overflow: hidden;
+}
+#pilotoH{
+    background-color: rgb(10, 10, 10);
+    overflow: hidden;
+    width: 100%;
+    min-height: 600px;
+
+
+}
+#h2pilotoH{
+    color: #fff;
+    font-family: "Prosto One", sans-serif;
+    font-weight: 600;
+    margin-left: 2.5%;
+    font-size: 2.0vw;
+
+}
+.container {
+    position: relative;
+    width: 100%;
+    margin-top: 10vh;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+  
+.image {
+    display: block;
+    width: 25%;
+    height: auto;
+   
+}
+  
+.overlay {
+    position: absolute;
+    background-color: rgb(218, 214, 214);
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+    overflow: hidden;   
+}
+
+.card {
+    background-image: url('./img/alainprost.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 400px;
+}
+.card:hover .overlay {
+    width: 26.3%;
+}
+.card2 {
+    background-image: url('./img/senna.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 400px;
+}
+.card2:hover .overlay {
+    width: 26.3%;
+}
+.card3 {
+    background-image: url('./img/Schumacher.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 400px;
+}
+.card3:hover .overlay {
+    width: 26.3%;
+} 
+.text {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+#copiapH {
     color: #ffffff96;
     font-size: 1vw;
     position: absolute;
     bottom: 1vh;
     width: 100%;
     text-align: center;
-}
-#imagemcomocomecou{
-    margin-top: 7%;
-    width: 50vw;
-    height: 65%;
-    float: right;    
-    overflow: hidden;
 }
