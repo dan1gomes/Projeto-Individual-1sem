@@ -11,3 +11,11 @@ function SaiuTopo(){
 }
 
 addEventListener('scroll', SaiuTopo)
+
+    const cards = document.querySelectorAll('.cardEquipe');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
+        });
+    });

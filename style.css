@@ -3,7 +3,8 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
-header{
+
+header {
     width: 100%;
     height: 10vh;
     z-index: 999;
@@ -12,9 +13,11 @@ header{
     justify-content: space-between;
     transition: 1s ease;
 }
-#logoIcon{
+
+#logoIcon {
     width: 4.5vw;
 }
+
 nav {
     overflow: hidden;
     width: 80%;
@@ -23,48 +26,55 @@ nav {
     align-items: center;
     justify-content: space-evenly;
 }
-.logo{
+
+.logo {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 10%;
     height: 100%;
 }
-nav a{
+
+nav a {
     color: honeydew;
     text-decoration: none;
     display: inline-block;
     padding: 20px 30px;
     font-family: "Prosto One", sans-serif;
     font-weight: 100;
-    
+
 }
-nav a:hover{
+
+nav a:hover {
     cursor: pointer;
     background-color: rgba(117, 117, 117, 0.536);
 }
-#cadastro{
-    padding: 12px 32px; 
+
+#cadastro {
+    padding: 12px 32px;
     background-color: rgb(209, 29, 29);
     font-family: "Prosto One", sans-serif;
     border-radius: 6px;
     color: whitesmoke;
     border-color: rgb(209, 29, 29);
 }
-#cadastro:hover{
+
+#cadastro:hover {
     cursor: pointer;
     background-color: rgba(240, 112, 83, 0.825);
     border-color: rgba(240, 112, 83, 0.825);
 }
+
 #telaInicial {
     height: 96vh;
     width: 100%;
     background: url('./img/fundo.jpeg');
     background-size: cover;
-    padding-top: 4vh; 
+    padding-top: 4vh;
     position: relative;
     background-size: 100% 100%;
 }
+
 #h2inicio {
     font-size: 2.5vw;
     color: #fff;
@@ -73,8 +83,9 @@ nav a:hover{
     padding: 2vw;
     font-family: "Prosto One", sans-serif;
     font-weight: 600;
-    
+
 }
+
 #pInicio {
     color: white;
     font-size: 1.0vw;
@@ -85,6 +96,7 @@ nav a:hover{
     font-weight: 100;
 
 }
+
 #copia {
     color: #ffffff96;
     font-size: 1vw;
@@ -93,19 +105,22 @@ nav a:hover{
     width: 100%;
     text-align: center;
 }
-#historia{
+
+#historia {
     background-color: rgb(10, 10, 10);
     padding: 50px 20px;
     position: relative;
     min-height: 400px;
 }
-.containerH{
+
+.containerH {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 400%;
 }
-.bloco{
+
+.bloco {
     margin-left: 0%;
     margin-top: 1.6%;
     background-color: rgb(218, 214, 214);
@@ -115,17 +130,19 @@ nav a:hover{
     border-radius: 10px;
     text-align: justify;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 998;
 }
-.imagemH{
+
+.imagemH {
     max-width: 500px;
     height: auto;
     border-radius: 10px;
 }
-#h2historia{
+
+#h2historia {
     font-size: 2.0vw;
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -134,6 +151,7 @@ nav a:hover{
     font-weight: 600;
     overflow: hidden;
 }
+
 #pHistoria {
     color: black;
     font-size: 1.4vw;
@@ -142,17 +160,28 @@ nav a:hover{
     font-family: "Anton", sans-serif;
     font-weight: 400;
     padding: 0vw;
-   
+
 }
 
-#imagemcomocomecou{
+#imagemcomocomecou {
     margin-top: 5%;
     width: 50vw;
     height: 30%;
-    float: right;    
+    float: right;
     overflow: hidden;
 }
-#pilotoD{
+
+#copiaH {
+    color: #ffffff96;
+    font-size: 1vw;
+    position: absolute;
+    margin-right: 14vh;
+    bottom: 1vh;
+    width: 100%;
+    text-align: right;
+}
+
+#pilotoD {
     background-color: rgb(10, 10, 10);
     overflow: hidden;
     width: 100%;
@@ -160,7 +189,8 @@ nav a:hover{
 
 
 }
-#h2pilotoD{
+
+#h2pilotoD {
     color: #fff;
     font-family: "Prosto One", sans-serif;
     font-weight: 600;
@@ -168,6 +198,7 @@ nav a:hover{
     font-size: 2.0vw;
 
 }
+
 .containerP {
     position: relative;
     width: 100%;
@@ -176,21 +207,21 @@ nav a:hover{
     align-items: center;
     display: flex;
 }
-  
+
 .image {
     display: block;
     width: 25%;
     height: auto;
-   
+
 }
-  
+
 .overlay {
     position: absolute;
     background-color: rgb(218, 214, 214);
     width: 0;
     height: 100%;
     transition: .5s ease;
-    overflow: hidden;   
+    overflow: hidden;
 }
 
 .card {
@@ -200,9 +231,11 @@ nav a:hover{
     height: 40vh;
     width: 55vh;
 }
+
 .card:hover .overlay {
     width: 25.2%;
 }
+
 .card2 {
     background-image: url('./img/senna.jpeg');
     background-size: cover;
@@ -210,9 +243,11 @@ nav a:hover{
     height: 40vh;
     width: 55vh;
 }
+
 .card2:hover .overlay {
     width: 25.2%;
 }
+
 .card3 {
     background-image: url('./img/alainprost.png');
     background-size: cover;
@@ -220,9 +255,11 @@ nav a:hover{
     height: 40vh;
     width: 55vh;
 }
+
 .card3:hover .overlay {
     width: 25.2%;
-} 
+}
+
 .card4 {
     background-image: url('./img/Schumacher.jpg');
     background-size: cover;
@@ -230,9 +267,11 @@ nav a:hover{
     height: 40vh;
     width: 55vh;
 }
+
 .card4:hover .overlay {
     width: 25.2%;
 }
+
 .card5 {
     background-image: url('./img/sebastianvettel.png');
     background-size: cover;
@@ -240,9 +279,11 @@ nav a:hover{
     height: 40vh;
     width: 55vh;
 }
+
 .card5:hover .overlay {
     width: 25.2%;
 }
+
 .card6 {
     background-image: url('./img/lewishamilton.png');
     background-size: cover;
@@ -250,9 +291,11 @@ nav a:hover{
     height: 40vh;
     width: 55vh;
 }
+
 .card6:hover .overlay {
     width: 25.2%;
 }
+
 .text {
     color: rgb(0, 0, 0);
     position: absolute;
@@ -265,6 +308,7 @@ nav a:hover{
     font-weight: 400;
 
 }
+
 .containerP2 {
     position: relative;
     width: 100%;
@@ -273,26 +317,29 @@ nav a:hover{
     align-items: center;
     display: flex;
 }
-#termos{
+
+#termos {
     background-color: rgb(10, 10, 10);
     overflow: hidden;
     width: 100%;
-    min-height: 650px;
 }
-#h2termos{
+
+#h2termos {
     color: #fff;
     font-family: "Prosto One", sans-serif;
     font-weight: 600;
     margin-left: 2.5%;
     font-size: 2.0vw;
 }
-.container-termos{
+
+.container-termos {
     display: grid;
-    flex-direction: column; 
-    gap: 10px; 
+    flex-direction: column;
+    gap: 10px;
     padding: 12px 20px;
 }
-.texto-termos{
+
+.texto-termos {
     background-color: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
@@ -300,4 +347,135 @@ nav a:hover{
     font-family: "Anton", sans-serif;
     font-size: 1vw;
     line-height: 1.6;
+}
+
+#equipes {
+    background-color: rgb(10, 10, 10);
+    overflow: hidden;
+    width: 100%;
+}
+
+#h2equipes {
+    color: #fff;
+    font-family: "Prosto One", sans-serif;
+    font-weight: 600;
+    margin-left: 2.5%;
+    font-size: 2.0vw;
+}
+.container1-equipes{
+    position: relative;
+    width: 100%;
+    margin-top: 5vh;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+.container2-equipes{
+    position: relative;
+    width: 100%;
+    margin-top: 5vh;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+.container3-equipes{
+    position: relative;
+    width: 100%;
+    margin-top: 5vh;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+.container4-equipes{
+    position: relative;
+    width: 100%;
+    margin-top: 5vh;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+.container5-equipes{
+    position: relative;
+    width: 100%;
+    margin-top: 5vh;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+.cardEquipe {
+    width: 90vh;
+    height: 30vh;
+    cursor: pointer;
+}
+
+.cardEquipe-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flipped .cardEquipe-inner {
+    transform: rotateY(180deg);
+}
+
+.cardEquipe-front, .cardEquipe-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.cardEquipe-front {
+    background: #2a3b5867;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardEquipe-back {
+    background: #2a3b5867;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20vh;
+}
+
+.cardEquipe-back img {
+    width: 22vh;
+    border-radius: 6px;
+}
+
+.cardEquipe-back p {
+    margin: 3vh 0;
+}
+.piloto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.piloto p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+.equipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.equipe p {
+    margin-bottom: 2vh;
+    font-family: "Prosto One", sans-serif;
+    font-size: 1vw;
 }
