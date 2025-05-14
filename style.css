@@ -51,18 +51,18 @@ nav a:hover {
 }
 
 #cadastro {
-    padding: 12px 32px;
-    background-color: rgb(209, 29, 29);
+    padding: 12px 24px;
+    background-color: rgb(208, 15, 15);
     font-family: "Prosto One", sans-serif;
     border-radius: 6px;
     color: whitesmoke;
-    border-color: rgb(209, 29, 29);
+    border-color: rgb(208, 15, 15);
 }
 
 #cadastro:hover {
     cursor: pointer;
-    background-color: rgba(240, 112, 83, 0.825);
-    border-color: rgba(240, 112, 83, 0.825);
+    background-color: rgb(255, 0, 0);
+    border-color: rgba(255, 0, 0);
 }
 
 #telaInicial {
@@ -249,7 +249,7 @@ nav a:hover {
 }
 
 .card3 {
-    background-image: url('./img/alainprost.png');
+    background-image: url('./img/prostalain.png');
     background-size: cover;
     background-repeat: no-repeat;
     height: 40vh;

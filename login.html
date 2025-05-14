@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pole Position</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="cadastro" href="cadastro.html">
+  <link rel="index" href="index.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./img/logoP1.ico">
+</head>
+
+<body>
+  <a class="logo" href="index.html"><img src="./img/logoP1.png"></a>
+  <div class="container">
+    <h2>Login</h2>
+      <label for="Email"></label>
+      <input id="email" type="email" placeholder="Email">
+      <label for="Senha"></label>
+      <input id="senha" type="password" placeholder="Senha">
+      <button onclick="login()">Entrar</button>
+    <a href="cadastro.html">Não possui conta? Criar conta</a>
+  </div>
+</body>
+
+</html>
+<script>
+  var vt_email = [];
+  var vt_senha = [];
+  function login() {
+    if (email.value == '' || senha.value == '') {
+      alert('Por favor insira os dois campos')
+    } else {
+      vt_email.push(email.value);
+      vt_senha.push(senha.value);
+      email.value = '';
+      senha.value = '';
+    }
+  }
+</script>
