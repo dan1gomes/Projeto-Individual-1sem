@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    z-index: 999;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s ease;
+}
+
+#logoIcon {
+    width: 4.5vw;
+}
+
+nav {
+    overflow: hidden;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 100%;
+}
+
+nav a {
+    color: honeydew;
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px 30px;
+    font-family: "Prosto One", sans-serif;
+    font-weight: 100;
+
+}
+
+nav a:hover {
+    cursor: pointer;
+    background-color: rgba(117, 117, 117, 0.536);
+}
+
+#sair {
+    padding: 12px 24px;
+    background-color: rgb(208, 15, 15);
+    font-family: "Prosto One", sans-serif;
+    border-radius: 6px;
+    color: whitesmoke;
+    border-color: rgb(208, 15, 15);
+}
+
+#sair:hover {
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+    border-color: rgba(255, 0, 0);
+}
+#votacao{
+    height: 96vh;
+    width: 97vw;
+    background: url('./img/fundosombreado.png');
+    padding: 4vh;
+    position: relative;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-votacao{
+    background-color: #ffffffb5;
+    width: 60vw;
+    height: 80vh;
+    border-radius: 6vh;
+    align-items: center;
+    justify-content: center;
+
+}
+.container-votacao h2 {
+    margin-left: 5vh;
+    color: #000000;
+    font-family: "Prosto One", sans-serif;  
+}
+
+#termos {
+    background-color: rgb(10, 10, 10);
+    overflow: hidden;
+}
+
+#h2termos {
+    color: #fff;
+    font-family: "Prosto One", sans-serif;
+    font-weight: 600;
+    margin-left: 2.5%;
+    font-size: 2.0vw;
+    margin-top: 10vh;
+}
+
+.container-termos {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 3vh 4vw;
+}
+.container-termos2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 2vh 4vw;
+}
+.container-termos3 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 2vh 4vw;
+}
+.container-termos4 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 2vh 4vw;
+}
+.container-termos5 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 2vh 4vw;
+}
+.texto-termos {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-family: "Anton", sans-serif;
+    font-size: 1vw;
+    line-height: 1.6;
+}

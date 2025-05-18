@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pole Position</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="cadastro" href="cadastro.html">
+  <link rel="index" href="index.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./img/logoP1.ico">
+</head>
+
+<body>
+  <a class="logo" href="index.html"><img src="./img/logoP1.png"></a>
+  <div class="container">
+    <h2>Login</h2>
+      <label for="Email"></label>
+      <input id="email" type="email" placeholder="Email">
+      <label for="Senha"></label>
+      <input id="senha" type="password" placeholder="Senha">
+      <button onclick="login()">Entrar</button>
+    <a href="cadastro.html">Não possui conta? Criar conta</a>
+  </div>
+</body>
+
+</html>
+<script>
+  function login() {
+
+      var emailVar = email.value;
+      var senhaVar = senha.value;
+
+      if (emailVar == "" || senhaVar == "") {
+          cardErro.style.display = "block"
+          mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+          finalizarAguardar();
+          return false;
+      }
+
+
+      console.log("FORM LOGIN: ", emailVar);
+      console.log("FORM SENHA: ", senhaVar);
+
+      fetch("/usuarios/autenticar", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              emailServer: emailVar,
+              senhaServer: senhaVar
+          })
+      }).then(function (resposta) {
+          console.log("ESTOU NO THEN DO entrar()!")
+
+          if (resposta.ok) {
+              console.log(resposta);
+
+              resposta.json().then(json => {
+                  console.log(json);
+                  console.log(JSON.stringify(json));
+                  sessionStorage.EMAIL_USUARIO = json.email;
+                  sessionStorage.NOME_USUARIO = json.nome;
+                  sessionStorage.ID_USUARIO = json.id;
+
+                  window.location = "/votacao.html"
+              });
+
+          } else {
+              alert("Login inválido tente novamente!")
+              console.log("Houve um erro ao tentar realizar o login!");
+
+              resposta.text().then(texto => {
+                  console.error(texto);
+              });
+          }
+
+      }).catch(function (erro) {
+          console.log(erro);
+      })
+
+      return false;
+  }
+</script>

@@ -69,7 +69,6 @@ nav a:hover {
     height: 96vh;
     width: 100%;
     background: url('./img/fundo.jpeg');
-    background-size: cover;
     padding-top: 4vh;
     position: relative;
     background-size: 100% 100%;
@@ -186,8 +185,6 @@ nav a:hover {
     overflow: hidden;
     width: 100%;
     min-height: 700px;
-
-
 }
 
 #h2pilotoD {
@@ -196,7 +193,6 @@ nav a:hover {
     font-weight: 600;
     margin-left: 2.5%;
     font-size: 2.0vw;
-
 }
 
 .containerP {
@@ -212,7 +208,6 @@ nav a:hover {
     display: block;
     width: 25%;
     height: auto;
-
 }
 
 .overlay {
@@ -317,49 +312,6 @@ nav a:hover {
     align-items: center;
     display: flex;
 }
-
-#termos {
-    background-color: rgb(10, 10, 10);
-    overflow: hidden;
-    width: 100%;
-}
-
-#h2termos {
-    color: #fff;
-    font-family: "Prosto One", sans-serif;
-    font-weight: 600;
-    margin-left: 2.5%;
-    font-size: 2.0vw;
-}
-
-.container-termos {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 3vh 2vw;
-}
-.container-termos2 {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 2vh 2vw;
-}
-.container-termos3   {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 2vh 2vw;
-}
-.texto-termos {
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    color: #fff;
-    font-family: "Anton", sans-serif;
-    font-size: 1vw;
-    line-height: 1.6;
-}
-
 #equipes {
     background-color: rgb(10, 10, 10);
     overflow: hidden;
