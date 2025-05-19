@@ -18,7 +18,7 @@
         <div class="logo"><img src="./img/logoP1.png" alt="Logo Pole Position" id="logoIcon"></div>
         <nav>
             <a href="#votacao">Votação</a>
-            <a href="#dashboard">Dashboard</a>
+            <a href="#Jogo">Jogo</a>
             <a href="#termos">Termos</a>
             <a id="sair" href="index.html">Sair</a>
         </nav>
@@ -26,6 +26,41 @@
     <section id="votacao">
         <div class="container-votacao">
             <h2>Vote no seu piloto favorito:</h2>
+            <div class="linha">
+                <div class="card-piloto">
+                    <p>Max Verstappen</p>
+                    <img src="./img/verstappen.avif" alt="Max Verstappen">
+                    <button onclick="max()">Votar</button>
+                </div>
+                <div class="card-piloto">
+                    <p>Charles LeClerc</p>
+                    <img src="./img/leclerc.avif" alt="Charles LeClerc">
+                    <button onclick="leclerc()">Votar</button>
+                </div>
+                <div class="card-piloto">
+                    <p>Lando Norris</p>
+                    <img src="./img/norris.avif" alt="Lando Norris">
+                    <button onclick="norris()">Votar</button>
+                </div>
+            </div>
+
+            <div class="linha">
+                <div class="card-piloto">
+                    <p>Lewis Hamilton</p>
+                    <img src="./img/hamilton.avif" alt="Lewis Hamilton">
+                    <button onclick="lewis()">Votar</button>
+                </div>
+                <div class="card-piloto">
+                    <p>Oscar Piastri</p>
+                    <img src="./img/piastri.avif" alt="Oscar Piastri">
+                    <button onclick="piastri()">Votar</button>
+                </div>
+                <div class="card-piloto">
+                    <p>George Russel</p>
+                    <img src="./img/russell.avif" alt="George Russel">
+                    <button onclick="russel()">Votar</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -125,3 +160,233 @@
 </body>
 
 </html>
+<script>
+    function max() {
+  var fkPilotoVar = 1
+  var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
+  console.log("Usuário votando: ", fkUsuarioVar);
+
+
+  fetch("/usuarios/max", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      
+      fkUsuarioServer: fkUsuarioVar,
+      fkPilotoServer: fkPilotoVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert 
+      ("Voto cadastrado com sucesso!");
+
+          window.location = "index.html";
+       
+      } else {
+        alert ("Houve um erro ao tentar votar!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
+    function leclerc() {
+  var fkPilotoVar = 2
+  var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
+  console.log("Usuário votando: ", fkUsuarioVar);
+
+
+  fetch("/usuarios/leclerc", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      
+      fkUsuarioServer: fkUsuarioVar,
+      fkPilotoServer: fkPilotoVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert 
+      ("Voto cadastrado com sucesso!");
+
+          window.location = "index.html";
+       
+      } else {
+        alert ("Houve um erro ao tentar votar!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
+    function norris() {
+  var fkPilotoVar = 3
+  var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
+  console.log("Usuário votando: ", fkUsuarioVar);
+
+
+  fetch("/usuarios/norris", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      
+      fkUsuarioServer: fkUsuarioVar,
+      fkPilotoServer: fkPilotoVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert 
+      ("Voto cadastrado com sucesso!");
+
+          window.location = "index.html";
+       
+      } else {
+        alert ("Houve um erro ao tentar votar!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
+    function lewis() {
+  var fkPilotoVar = 4
+  var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
+  console.log("Usuário votando: ", fkUsuarioVar);
+
+
+  fetch("/usuarios/lewis", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      
+      fkUsuarioServer: fkUsuarioVar,
+      fkPilotoServer: fkPilotoVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert 
+      ("Voto cadastrado com sucesso!");
+
+          window.location = "index.html";
+       
+      } else {
+        alert ("Houve um erro ao tentar votar!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
+    function piastri() {
+  var fkPilotoVar = 5
+  var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
+  console.log("Usuário votando: ", fkUsuarioVar);
+
+
+  fetch("/usuarios/piastri", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      
+      fkUsuarioServer: fkUsuarioVar,
+      fkPilotoServer: fkPilotoVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert 
+      ("Voto cadastrado com sucesso!");
+
+          window.location = "index.html";
+       
+      } else {
+        alert ("Houve um erro ao tentar votar!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
+    function russel() {
+  var fkPilotoVar = 6
+  var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
+  console.log("Usuário votando: ", fkUsuarioVar);
+
+
+  fetch("/usuarios/piastri", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      
+      fkUsuarioServer: fkUsuarioVar,
+      fkPilotoServer: fkPilotoVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert 
+      ("Voto cadastrado com sucesso!");
+
+          window.location = "index.html";
+       
+      } else {
+        alert ("Houve um erro ao tentar votar!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
+</script>

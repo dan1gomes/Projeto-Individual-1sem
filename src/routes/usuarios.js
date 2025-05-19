@@ -13,4 +13,28 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post("/max", function (req, res) {
+    usuarioController.max(req, res);
+});
+
+router.post("/leclerc", function (req, res) {
+    usuarioController.leclerc(req, res);
+});
+
+router.post("/norris", function (req, res) {
+    usuarioController.norris(req, res);
+});
+
+router.post("/lewis", function (req, res) {
+    usuarioController.lewis(req, res);
+});
+
+router.post("/piastri", function (req, res) {
+    usuarioController.piastri(req, res);
+});
+
+router.post("/russel", function (req, res) {
+    usuarioController.russel(req, res);
+});
+
 module.exports = router;

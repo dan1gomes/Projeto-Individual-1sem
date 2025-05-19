@@ -64,31 +64,74 @@ nav a:hover {
     background-color: rgb(255, 0, 0);
     border-color: rgba(255, 0, 0);
 }
-#votacao{
-    height: 96vh;
-    width: 97vw;
-    background: url('./img/fundosombreado.png');
-    padding: 4vh;
-    position: relative;
-    background-size: 100% 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.container-votacao{
-    background-color: #ffffffb5;
-    width: 60vw;
-    height: 80vh;
-    border-radius: 6vh;
-    align-items: center;
-    justify-content: center;
 
-}
-.container-votacao h2 {
-    margin-left: 5vh;
-    color: #000000;
-    font-family: "Prosto One", sans-serif;  
-}
+    #votacao {
+        height: 96vh;
+        width: 97vw;
+        background: url('./img/fundosombreado.png');
+        padding: 4vh;
+        position: relative;
+        background-size: 100% 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-votacao {
+        background-color: #ffffffb5;
+        width: 65vw;
+        height: 85vh;
+        border-radius: 6vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    .container-votacao h2 {
+        color: #000000;
+        font-family: "Prosto One", sans-serif;
+        text-align: center;
+    }
+    .linha {
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+    }
+    .card-piloto {
+        width: 14vw;
+        height: auto;
+        border: 7vh;
+        text-align: center;
+        padding: 1vh;
+    }
+
+    .card-piloto img {
+        width: 100%;
+        height: 25vh;
+        border-radius: 4vh;
+
+    }
+
+    .card-piloto p {
+        margin: 1vh 0;
+        font-weight: bold;
+        font-family: "Prosto One", sans-serif;  
+        font-size: 2vh;
+    }
+
+    .card-piloto button {
+        background-color: rgb(208, 15, 15);
+        border: none;
+        padding: 1.5vh 3vw;
+        border-radius: 1vh;
+        font-family: "Prosto One", sans-serif;
+        font-size: 1.5vh;
+    }
+    .card-piloto button:hover {
+        cursor: pointer;
+        background-color:  rgb(255, 0, 0);
+    }
 
 #termos {
     background-color: rgb(10, 10, 10);
@@ -110,30 +153,35 @@ nav a:hover {
     gap: 10px;
     padding: 3vh 4vw;
 }
+
 .container-termos2 {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     padding: 2vh 4vw;
 }
+
 .container-termos3 {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     padding: 2vh 4vw;
 }
+
 .container-termos4 {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     padding: 2vh 4vw;
 }
+
 .container-termos5 {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     padding: 2vh 4vw;
 }
+
 .texto-termos {
     background-color: #1a1a1a;
     padding: 20px;

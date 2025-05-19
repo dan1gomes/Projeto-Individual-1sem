@@ -67,8 +67,94 @@ function cadastrar(req, res) {
             );
     }
 }
+function max(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkPiloto = req.body.fkPilotoServer;
+
+        usuarioModel.max(fkUsuario, fkPiloto)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+}
+function leclerc(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkPiloto = req.body.fkPilotoServer;
+
+        usuarioModel.lecler(fkUsuario, fkPiloto)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+}
+function norris(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkPiloto = req.body.fkPilotoServer;
+
+        usuarioModel.norris(fkUsuario, fkPiloto)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+}
+function lewis(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkPiloto = req.body.fkPilotoServer;
+
+        usuarioModel.lewis(fkUsuario, fkPiloto)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+}
+function piastri(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkPiloto = req.body.fkPilotoServer;
+
+        usuarioModel.piastri(fkUsuario, fkPiloto)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+}
+function russel(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkPiloto = req.body.fkPilotoServer;
+
+        usuarioModel.russel(fkUsuario, fkPiloto)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+}
+
+
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    max,
+    leclerc,
+    norris,
+    lewis,
+    piastri,
+    russel
 }
