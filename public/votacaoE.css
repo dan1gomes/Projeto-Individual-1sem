@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    z-index: 999;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s ease;
+}
+
+#logoIcon {
+    width: 4.5vw;
+}
+
+nav {
+    overflow: hidden;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 100%;
+}
+
+#voltar {
+    height: 2vh;
+    padding: 2vh 2vw;
+    background-color: rgb(208, 15, 15);
+    font-family: "Prosto One", sans-serif;
+    border-radius: 6px;
+    color: whitesmoke;
+    border-color: rgb(208, 15, 15);
+    margin-right: 5vh;
+    margin-top: 3vh;
+}
+
+#voltar:hover {
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+    border-color: rgba(255, 0, 0);
+}
+
+#votacao {
+    height: 96vh;
+    width: 97vw;
+    background: url('./img/fundosombreado.png');
+    padding: 4vh;
+    position: relative;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container-votacao {
+    background-color: #ffffffb5;
+    width: 70vw;
+    height: 80vh;
+    border-radius: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2vh;
+
+}
+
+.container-votacao h2 {
+    color: #000000;
+    font-family: "Prosto One", sans-serif;
+    text-align: center;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+}
+
+.card-equipe {
+    width: 30vw;
+    height: auto;
+    border: 7vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.card-equipe img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 2vh;
+
+}
+
+.card-equipe p {
+    margin: 1vh 0;
+    font-weight: bold;
+    font-family: "Prosto One", sans-serif;
+    font-size: 2vh;
+}
+
+.card-equipe button {
+    background-color: rgb(208, 15, 15);
+    border: none;
+    padding: 2vh 4vw;
+    border-radius: 1vh;
+    font-family: "Prosto One", sans-serif;
+    font-size: 1.5vh;
+}
+
+.card-equipe button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+}
+

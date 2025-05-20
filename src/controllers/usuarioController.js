@@ -84,7 +84,7 @@ function leclerc(req, res) {
     var fkUsuario = req.body.fkUsuarioServer;
     var fkPiloto = req.body.fkPilotoServer;
 
-        usuarioModel.lecler(fkUsuario, fkPiloto)
+        usuarioModel.leclerc(fkUsuario, fkPiloto)
             .then(function (resultado) {
                 res.json(resultado);
             }).catch(function (erro) {
@@ -145,8 +145,58 @@ function russel(req, res) {
                 res.status(500).json(erro.sqlMessage);
             });
 }
+function ferrari(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkEquipe = req.body.fkEquipeServer;
 
+        usuarioModel.ferrari(fkUsuario, fkEquipe)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+}
+function maclaren(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkEquipe = req.body.fkEquipeServer;
 
+        usuarioModel.maclaren(fkUsuario, fkEquipe)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+}
+function mercedes(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkEquipe = req.body.fkEquipeServer;
+
+        usuarioModel.mercedes(fkUsuario, fkEquipe)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+}
+function redbull(req, res) {
+    var fkUsuario = req.body.fkUsuarioServer;
+    var fkEquipe = req.body.fkEquipeServer;
+
+        usuarioModel.redbull(fkUsuario, fkEquipe)
+            .then(function (resultado) {
+                res.json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            });
+}
 
 module.exports = {
     autenticar,
@@ -156,5 +206,9 @@ module.exports = {
     norris,
     lewis,
     piastri,
-    russel
+    russel,
+    ferrari,
+    maclaren,
+    mercedes,
+    redbull
 }

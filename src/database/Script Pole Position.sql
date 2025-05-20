@@ -13,15 +13,21 @@ idPiloto int primary key auto_increment,
 nome varchar (45),
 equipe varchar (45)
 );
-
+Create table Equipe (
+idEquipe int primary key auto_increment,
+nome varchar (45)
+);
 Create table Votos (
-id int,
+id int auto_increment,
 fkUsuario int,
 fkPiloto int,
-primary key (id, fkUsuario, fkPiloto),
+fkEquipe int,
+primary key (id, fkUsuario),
 foreign key (fkUsuario) references Usuario (idUsuario),
-foreign key (fkPiloto) references Piloto (idPiloto)
+foreign key (fkPiloto) references Piloto (idPiloto),
+foreign key (fkEquipe) references Equipe (idEquipe)
 );
+
 
 Insert into Piloto (nome, equipe) values 
 ('Max Verstappen', 'Red Bull'),
@@ -30,3 +36,10 @@ Insert into Piloto (nome, equipe) values
 ('Lewis Hamilton', 'Ferrari'),
 ('Oscar Piastri', 'Mac Laren'),
 ('George Russel', 'Mercedes');
+
+Insert into Equipe (nome) values
+('Ferrari'),
+('Mac Laren'),
+('Red Bull'),
+('Mercedes');
+

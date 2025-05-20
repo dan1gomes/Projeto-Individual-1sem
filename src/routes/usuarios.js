@@ -37,4 +37,20 @@ router.post("/russel", function (req, res) {
     usuarioController.russel(req, res);
 });
 
+router.post("/ferrari", function (req, res) {
+    usuarioController.ferrari(req, res);
+});
+
+router.post("/maclaren", function (req, res) {
+    usuarioController.maclaren(req, res);
+});
+
+router.post("/mercedes", function (req, res) {
+    usuarioController.mercedes(req, res);
+});
+
+router.post("/redbull", function (req, res) {
+    usuarioController.redbull(req, res);
+});
+
 module.exports = router;

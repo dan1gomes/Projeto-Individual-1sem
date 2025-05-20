@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pole Position</title>
+    <link rel="stylesheet" href="votacaoE.css">
+    <link rel="inicio" href="dashboard.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./img/logoP1.ico">
+</head>
+<body>
+        <header>
+        <div class="logo"><img src="./img/logoP1.png" alt="Logo Pole Position" id="logoIcon"></div>
+          <a id="voltar" href="votacaoP.html">Voltar</a>
+    </header>
+    <section id="votacao">
+        <div class="container-votacao">
+            <h2>Vote na sua equipe favorita:</h2>
+            <div class="linha">
+                <div class="card-equipe">
+                    <p>Ferrari</p>
+                    <img src="./img/ferrari.avif" alt="Ferrari">
+                    <button onclick="ferrari()">Votar</button>
+                </div>
+                <div class="card-equipe">
+                    <p>Mac Laren</p>
+                    <img src="./img/mclaren.avif" alt="Mac Laren">
+                    <button onclick="maclaren()">Votar</button>
+                </div>
+            </div>
+
+            <div class="linha">
+                <div class="card-equipe">
+                    <p>Mercedes</p>
+                    <img src="./img/mercedes.avif" alt="Mercedes">
+                    <button onclick="mercedes()">Votar</button>
+                </div>
+                <div class="card-equipe">
+                    <p>Red Bull</p>
+                    <img src="./img/red-bull-racing (1).avif" alt="Red Bull Racing">
+                    <button onclick="redbull()">Votar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<script>
+function ferrari() {
+  var fkEquipeVar = 1
+  var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
+  console.log("Usuário votando: ", fkUsuarioVar);
+
+
+  fetch("/usuarios/ferrari", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      
+      fkUsuarioServer: fkUsuarioVar,
+      fkEquipeServer: fkEquipeVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert 
+      ("Voto cadastrado com sucesso!");
+
+          window.location = "dashboard.html";
+       
+      } else {
+        alert ("Houve um erro ao tentar votar!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
+
+function maclaren() {
+  var fkEquipeVar = 2
+  var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
+  console.log("Usuário votando: ", fkUsuarioVar);
+
+
+  fetch("/usuarios/maclaren", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      
+      fkUsuarioServer: fkUsuarioVar,
+      fkEquipeServer: fkEquipeVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert 
+      ("Voto cadastrado com sucesso!");
+
+          window.location = "dashboard.html";
+       
+      } else {
+        alert ("Houve um erro ao tentar votar!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
+
+function mercedes() {
+  var fkEquipeVar = 4
+  var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
+  console.log("Usuário votando: ", fkUsuarioVar);
+
+
+  fetch("/usuarios/mercedes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      
+      fkUsuarioServer: fkUsuarioVar,
+      fkEquipeServer: fkEquipeVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert 
+      ("Voto cadastrado com sucesso!");
+
+          window.location = "dashboard.html";
+       
+      } else {
+        alert ("Houve um erro ao tentar votar!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
+
+function redbull() {
+  var fkEquipeVar = 3
+  var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
+  console.log("Usuário votando: ", fkUsuarioVar);
+
+
+  fetch("/usuarios/redbull", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      
+      
+      fkUsuarioServer: fkUsuarioVar,
+      fkEquipeServer: fkEquipeVar,
+    }),
+  })
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+
+        alert 
+      ("Voto cadastrado com sucesso!");
+
+          window.location = "dashboard.html";
+       
+      } else {
+        alert ("Houve um erro ao tentar votar!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
+</script>
