@@ -18,7 +18,7 @@ idEquipe int primary key auto_increment,
 nome varchar (45)
 );
 Create table Votos (
-id int auto_increment,
+id int,
 fkUsuario int,
 fkPiloto int,
 fkEquipe int,
@@ -28,14 +28,13 @@ foreign key (fkPiloto) references Piloto (idPiloto),
 foreign key (fkEquipe) references Equipe (idEquipe)
 );
 
-
 Insert into Piloto (nome, equipe) values 
 ('Max Verstappen', 'Red Bull'),
 ('Charles LeClerc', 'Ferrari'),
 ('Lando Norris', 'Mac Laren'),
 ('Lewis Hamilton', 'Ferrari'),
 ('Oscar Piastri', 'Mac Laren'),
-('George Russel', 'Mercedes');
+('Gabriel', 'Bortoleto');
 
 Insert into Equipe (nome) values
 ('Ferrari'),
@@ -43,3 +42,19 @@ Insert into Equipe (nome) values
 ('Red Bull'),
 ('Mercedes');
 
+select * from Usuario;
+select * from Piloto;
+select * from Votos;
+
+ update Piloto set nome = 'Gabriel Bortoleto' where idPiloto = 6;
+ update Piloto set equipe = 'Kick Sauber' where idPiloto = 6;
+
+select (select nome from Piloto join Votos on fkPiloto = idPiloto group by fkPiloto order by count(fkPiloto) desc limit 1) as 'maisVotadoP',
+	   (select nome from Piloto join Votos on fkPiloto = idPiloto group by fkPiloto order by count(fkPiloto) asc limit 1) as 'menosVotadoP';
+       
+select (select nome from Equipe join Votos on fkEquipe = idEquipe group by fkEquipe order by count(fkEquipe) desc limit 1) as 'maisVotadaE',
+	   (select nome from Equipe join Votos on fkEquipe = idEquipe group by fkEquipe order by count(fkEquipe) asc limit 1) as 'menosVotadaE';
+
+select nome, count(fkPiloto) from Votos join Piloto on fkPiloto = idPiloto group by fkPiloto order by fkPiloto;
+
+select nome, count(fkEquipe) from Votos join Equipe on fkEquipe = idEquipe group by fkEquipe order by fkEquipe;

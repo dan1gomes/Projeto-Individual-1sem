@@ -35,7 +35,7 @@ nav {
     height: 100%;
 }
 
-#voltar {
+#pular {
     height: 2vh;
     padding: 2vh 2vw;
     background-color: rgb(208, 15, 15);
@@ -47,7 +47,7 @@ nav {
     margin-top: 3vh;
 }
 
-#voltar:hover {
+#pular:hover {
     cursor: pointer;
     background-color: rgb(255, 0, 0);
     border-color: rgba(255, 0, 0);

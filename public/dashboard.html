@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,20 +11,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./img/logoP1.ico">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
     <header>
         <div class="logo"><img src="./img/logoP1.png" alt="Logo Pole Position" id="logoIcon"></div>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="votacaoP.html">Votação</a>
-            <a id="voltar" href="votacaoaP.html">Voltar</a>
+            <a id="sair" href="index.html">Sair</a>
         </nav>
     </header>
     <section class="dashboard">
         <div class="container-dash">
+            <h2>Resultado da votação</h2>
             <div class="indicadores">
-                <h2>Resultado da votação</h2>
                 <div class="kpi1">
                     <p>Piloto mais votado:</p>
                     <h1 class="valorkpi"></h1>
@@ -33,15 +36,231 @@
                     <h1 class="valorkpi"></h1>
                 </div>
                 <div class="kpi3">
-                    <p>Equipe mais votada</p>
+                    <p>Equipe mais votada:</p>
                     <h1 class="valorkpi"></h1>
                 </div>
                 <div class="kpi4">
-                    <p>Equipe menos votada</p>
+                    <p>Equipe menos votada:</p>
                     <h1 class="valorkpi"></h1>
+                </div>
+            </div>
+            <div class="graficos">
+                <div>
+                    <canvas id="graficoPiloto"></canvas>
+                </div>
+
+
+                <div>
+                    <canvas id="graficoEquipe"></canvas>
                 </div>
             </div>
         </div>
     </section>
 </body>
+
 </html>
+<script>
+    let Atualizacao;
+
+    window.onload = () => { obterDadosGraficoPiloto(1), obterDadosGraficoEquipe(2), buscarMedidasEmIndicadores() }
+
+    function obterDadosGraficoPiloto(fkPiloto) {
+
+
+        fetch(`/medidas/ultimas/${fkPiloto}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGraficoBarrasPiloto(resposta, fkPiloto);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function obterDadosGraficoEquipe(fkEquipe) {
+
+
+        fetch(`/medidas/ultimas/${fkEquipe}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGraficoBarrasEquipe(resposta, fkEquipe);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function plotarGraficoBarrasPiloto(resposta) {
+        console.log('iniciando plotagem do gráfico de pilotos...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    label: 'Votos',
+                    borderColor: '#32B9CD',
+                    backgroundColor: ['#0000FF', '#FF0000', '#e67e22 ', '#B22222', '#F4A460', '#00FF00'],
+                    data: []
+                }
+            ]
+        };
+
+
+
+        for (var i = resposta.length - 1; i >= 0; i--) {
+            var registro = resposta[i];
+            dados.labels.push(registro.nome);
+            dados.datasets[0].data.push(registro['count(fkPiloto)']);
+        }
+
+        console.log(JSON.stringify(dados));
+
+        var canvas = document.getElementById('graficoPiloto');
+        var ctx = canvas.getContext('2d');
+
+
+        window.graficoPiloto = new Chart(ctx, {
+            type: 'bar',
+            data: dados,
+            options: {
+                animation: { duration: 500 },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Quantidade de votos (Pilotos)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0
+                    }
+                }
+            }
+        });
+
+    }
+    function plotarGraficoBarrasEquipe(resposta) {
+        console.log('iniciando plotagem do gráfico de equipes...');
+
+        var dados = {
+            labels: ['Ferrari', 'Mac Laren', 'Red Bull', 'Mercedes'],
+            datasets: [
+                {
+                    label: 'Votos',
+                    borderColor: '#000000',
+                    backgroundColor: ['#DC143C ', '#e67e22', '#00008B', '#696969'],
+                    data: []
+                }
+            ]
+        };
+
+
+
+        for (var i = resposta.length - 1; i >= 0; i--) {
+            var registro = resposta[i];
+            dados.labels.push(registro.nome);
+            dados.datasets[0].data.push(registro['count(fkEquipe)']);
+        }
+
+        console.log(JSON.stringify(dados));
+
+        var canvas = document.getElementById('graficoEquipe');
+        var ctx = canvas.getContext('2d');
+
+
+        window.graficoEquipe = new Chart(ctx, {
+            type: 'bar',
+            data: dados,
+            options: {
+                animation: { duration: 500 },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Quantidade de votos (Equipes)'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0
+                    }
+                }
+            }
+        });
+
+    }
+    function atualizarGraficoPiloto(fkPiloto, dados) {
+        fetch(`/medidas/tempo-real/${fkPiloto}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico: ${dados}`);
+
+                    window.graficoPiloto.update();
+
+                    proximaAtualizacao = setTimeout(() => atualizarGraficoPiloto(dados), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = setTimeout(() => atualizarGraficoPiloto(dados), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function atualizarGraficoEquipe(fkEquipe, dados) {
+        fetch(`/medidas/tempo-real/${fkEquipe}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico: ${dados}`);
+
+                    window.graficoEquipe.update();
+
+                    proximaAtualizacao = setTimeout(() => atualizarGraficoEquipe(dados), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = setTimeout(() => atualizarGraficoEquipe(dados), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function buscarMedidasEmIndicadores() {
+        fetch("/medidas/indicadores", { cache: "no-store" })
+            .then(res => {
+                if (res.ok) return res.json();
+            })
+            .then(dados => {
+                const info = dados[0];
+                const indicadores = document.getElementsByClassName("valorkpi");
+                indicadores[0].innerText = info.maisVotadoP;
+                indicadores[1].innerText = info.menosVotadoP;
+                indicadores[2].innerText = info.maisVotadaE;
+                indicadores[3].innerText = info.menosVotadaE;
+            })
+            .catch(erro => {
+                console.error("Erro ao carregar os indicadores:", erro);
+            });
+    }
+
+
+</script>

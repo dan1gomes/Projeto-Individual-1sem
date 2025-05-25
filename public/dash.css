@@ -1,102 +1,153 @@
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
 
-header {
-    width: 100%;
-    height: 10vh;
-    z-index: 999;
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    transition: 1s ease;
-}
+    header {
+        width: 100%;
+        height: 10vh;
+        z-index: 999;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        transition: 1s ease;
+    }
 
-#logoIcon {
-    width: 4.5vw;
-}
+    #logoIcon {
+        width: 4.5vw;
+    }
 
-nav {
-    overflow: hidden;
-    width: 80%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
+    nav {
+        overflow: hidden;
+        width: 80%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 10%;
-    height: 100%;
-}
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10%;
+        height: 100%;
+    }
 
-nav a {
-    color: honeydew;
-    text-decoration: none;
-    display: inline-block;
-    padding: 20px 30px;
-    font-family: "Prosto One", sans-serif;
-    font-weight: 100;
+    nav a {
+        color: honeydew;
+        text-decoration: none;
+        display: inline-block;
+        padding: 2vh 3vw;
+        font-family: "Prosto One", sans-serif;
+        font-weight: 100;
 
-}
+    }
 
-nav a:hover {
-    cursor: pointer;
-    background-color: rgba(117, 117, 117, 0.536);
-}
+    nav a:hover {
+        cursor: pointer;
+        background-color: rgba(117, 117, 117, 0.536);
+    }
 
-#voltar {
-    padding: 12px 24px;
-    background-color: rgb(208, 15, 15);
-    font-family: "Prosto One", sans-serif;
-    border-radius: 6px;
-    color: whitesmoke;
-    border-color: rgb(208, 15, 15);
-}
+    #sair {
+        padding: 1.2vh 2.4vw;
+        background-color: rgb(208, 15, 15);
+        font-family: "Prosto One", sans-serif;
+        border-radius: 6px;
+        color: whitesmoke;
+        border-color: rgb(208, 15, 15);
+    }
 
-#voltar:hover {
-    cursor: pointer;
-    background-color: rgb(255, 0, 0);
-    border-color: rgba(255, 0, 0);
-}
+    #sair:hover {
+        cursor: pointer;
+        background-color: rgb(255, 0, 0);
+        border-color: rgba(255, 0, 0);
+    }
 
-.dashboard {
-    height: 96vh;
-    width: 97vw;
-    background: url('./img/fundosombreado.png');
-    padding: 4vh;
-    position: relative;
-    background-size: 100% 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .dashboard {
+        height: 96vh;
+        width: 97vw;
+        background: url('./img/fundosombreado.png');
+        padding: 4vh;
+        position: relative;
+        background-size: 100% 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.container-dash {
-    background-color: #747373b5;
-    width: 75vw;
-    height: 85vh;
-    border-radius: 6vh;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+    .container-dash {
+        background-color: #747373b5;
+        width: 87vw;
+        height: 80vh;
+        border-radius: 6vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 2vh;
+        padding: 4vh;
+    }
 
-.indicadores h2 {
-    margin-top: 2vh;
-    height: 5vh;
-    font-family: "Prosto One", sans-serif;
-    text-align: center;
-    justify-items: center;
-    align-items: center;
-}
-.kpi1 p {
-    font-family: "Prosto One", sans-serif;
-    font-weight: 600;
+    .container-dash h2 {
+        margin-top: 0;
+        text-align: center;
+        font-size: 4vh;
+        font-family: "Prosto One", sans-serif;
+    }
 
-}
+    .indicadores {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3vw;
+        flex-wrap: nowrap;
+        width: 100%;
+        margin-bottom: 4vh;
+    }
+
+
+    .kpi1, .kpi2, .kpi3, .kpi4 {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 2vh;
+        padding: 2vh 2vw;
+        font-family: "Prosto One", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 17vw;
+        min-width: 20vw;
+        box-sizing: border-box;
+    }
+
+    .kpi1 h1, .kpi2 h1, .kpi3 h1, .kpi4 h1 {
+        margin: 1vh 0 0 0;
+        font-size: 2.5vh;
+    }
+    .kpi1 p, .kpi2 p, .kpi3 p, .kpi4 p {
+        font-size: 2.5vh;
+        font-weight: bold;
+    }
+
+    .graficos {
+        background-color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        padding: 4vh 0;
+        box-sizing: border-box;
+        gap: 4vw;
+        flex-wrap: nowrap;
+
+    }
+
+    #graficoPiloto, #graficoEquipe {
+        width: 42vw;
+        height: 45vh;
+        min-width: 30vw;
+        box-sizing: border-box;
+    }

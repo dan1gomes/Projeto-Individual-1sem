@@ -33,8 +33,8 @@ router.post("/piastri", function (req, res) {
     usuarioController.piastri(req, res);
 });
 
-router.post("/russel", function (req, res) {
-    usuarioController.russel(req, res);
+router.post("/bortoleto", function (req, res) {
+    usuarioController.bortoleto(req, res);
 });
 
 router.post("/ferrari", function (req, res) {

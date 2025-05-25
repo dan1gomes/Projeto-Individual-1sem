@@ -20,7 +20,7 @@
             <a href="#votacao">Votação</a>
             <a href="#Jogo">Jogo</a>
             <a href="#termos">Termos</a>
-            <a id="sair" href="index.html">Sair</a>
+            <a id="pular" href="votacaoE.html">Pular</a>
         </nav>
     </header>
     <section id="votacao">
@@ -56,9 +56,9 @@
                     <button onclick="piastri()">Votar</button>
                 </div>
                 <div class="card-piloto">
-                    <p>George Russel</p>
-                    <img src="./img/russell.avif" alt="George Russel">
-                    <button onclick="russel()">Votar</button>
+                    <p>Gabriel Bortoleto</p>
+                    <img src="./img/bortoleto.avif" alt="Gabriel Bortoleto">
+                    <button onclick="bortoleto()">Votar</button>
                 </div>
             </div>
         </div>
@@ -351,13 +351,13 @@
 
   return false;
 }
-    function russel() {
+    function bortoleto() {
   var fkPilotoVar = 6
   var fkUsuarioVar = sessionStorage.getItem("ID_USUARIO"); 
   console.log("Usuário votando: ", fkUsuarioVar);
 
 
-  fetch("/usuarios/piastri", {
+  fetch("/usuarios/bortoleto", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

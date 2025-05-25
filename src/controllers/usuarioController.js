@@ -132,11 +132,11 @@ function piastri(req, res) {
                 res.status(500).json(erro.sqlMessage);
             });
 }
-function russel(req, res) {
+function bortoleto(req, res) {
     var fkUsuario = req.body.fkUsuarioServer;
     var fkPiloto = req.body.fkPilotoServer;
 
-        usuarioModel.russel(fkUsuario, fkPiloto)
+        usuarioModel.bortoleto(fkUsuario, fkPiloto)
             .then(function (resultado) {
                 res.json(resultado);
             }).catch(function (erro) {
@@ -206,7 +206,7 @@ module.exports = {
     norris,
     lewis,
     piastri,
-    russel,
+    bortoleto,
     ferrari,
     maclaren,
     mercedes,
