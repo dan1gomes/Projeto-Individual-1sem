@@ -44,16 +44,17 @@ Insert into Equipe (nome) values
 
 select * from Usuario;
 select * from Piloto;
+select * from Equipe;
 select * from Votos;
 
  update Piloto set nome = 'Gabriel Bortoleto' where idPiloto = 6;
  update Piloto set equipe = 'Kick Sauber' where idPiloto = 6;
 
-select (select nome from Piloto join Votos on fkPiloto = idPiloto group by fkPiloto order by count(fkPiloto) desc limit 1) as 'maisVotadoP',
-	   (select nome from Piloto join Votos on fkPiloto = idPiloto group by fkPiloto order by count(fkPiloto) asc limit 1) as 'menosVotadoP';
+select (select nome from Piloto join Votos on fkPiloto = idPiloto group by fkPiloto order by count(fkPiloto) desc limit 1) as 'Piloto Mais Votado',
+	   (select nome from Piloto join Votos on fkPiloto = idPiloto group by fkPiloto order by count(fkPiloto) asc limit 1) as 'Piloto Menos Votado';
        
-select (select nome from Equipe join Votos on fkEquipe = idEquipe group by fkEquipe order by count(fkEquipe) desc limit 1) as 'maisVotadaE',
-	   (select nome from Equipe join Votos on fkEquipe = idEquipe group by fkEquipe order by count(fkEquipe) asc limit 1) as 'menosVotadaE';
+select (select nome from Equipe join Votos on fkEquipe = idEquipe group by fkEquipe order by count(fkEquipe) desc limit 1) as 'Equipe Mais Votado',
+	   (select nome from Equipe join Votos on fkEquipe = idEquipe group by fkEquipe order by count(fkEquipe) asc limit 1) as 'Equipe Menos Votado';
 
 select nome, count(fkPiloto) from Votos join Piloto on fkPiloto = idPiloto group by fkPiloto order by fkPiloto;
 

@@ -102,15 +102,19 @@
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
-        gap: 3vw;
+        gap: 2.2vw;
         flex-wrap: nowrap;
         width: 100%;
         margin-bottom: 4vh;
     }
 
 
-    .kpi1, .kpi2, .kpi3, .kpi4 {
+    .kpi1,
+    .kpi2,
+    .kpi3,
+    .kpi4 {
         background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 4px 20px rgb(0, 0, 0);
         border-radius: 2vh;
         padding: 2vh 2vw;
         font-family: "Prosto One", sans-serif;
@@ -123,30 +127,40 @@
         box-sizing: border-box;
     }
 
-    .kpi1 h1, .kpi2 h1, .kpi3 h1, .kpi4 h1 {
+    .kpi1 h1,
+    .kpi2 h1,
+    .kpi3 h1,
+    .kpi4 h1 {
         margin: 1vh 0 0 0;
         font-size: 2.5vh;
     }
-    .kpi1 p, .kpi2 p, .kpi3 p, .kpi4 p {
+
+    .kpi1 p,
+    .kpi2 p,
+    .kpi3 p,
+    .kpi4 p {
         font-size: 2.5vh;
         font-weight: bold;
     }
 
     .graficos {
-        background-color: aliceblue;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 4px 20px rgb(0, 0, 0);
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        width: 100%;
+        width: 87vw;
         padding: 4vh 0;
+        border-radius: 4vh;
         box-sizing: border-box;
         gap: 4vw;
         flex-wrap: nowrap;
 
     }
 
-    #graficoPiloto, #graficoEquipe {
-        width: 42vw;
+    #graficoPiloto,
+    #graficoEquipe {
+        width: 40vw;
         height: 45vh;
         min-width: 30vw;
         box-sizing: border-box;

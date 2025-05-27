@@ -62,12 +62,12 @@
 <script>
     let Atualizacao;
 
-    window.onload = () => { obterDadosGraficoPiloto(1), obterDadosGraficoEquipe(2), buscarMedidasEmIndicadores() }
+    window.onload = () => { obterDadosGraficoPiloto(), obterDadosGraficoEquipe(), buscarMedidasEmIndicadores() }
 
     function obterDadosGraficoPiloto(fkPiloto) {
 
 
-        fetch(`/medidas/ultimas/${fkPiloto}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/ultimas/piloto`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -86,7 +86,7 @@
     function obterDadosGraficoEquipe(fkEquipe) {
 
 
-        fetch(`/medidas/ultimas/${fkEquipe}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/ultimas/equipe`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -110,7 +110,7 @@
             datasets: [
                 {
                     label: 'Votos',
-                    borderColor: '#32B9CD',
+                    borderColor: '#000000',
                     backgroundColor: ['#0000FF', '#FF0000', '#e67e22 ', '#B22222', '#F4A460', '#00FF00'],
                     data: []
                 }
@@ -156,12 +156,12 @@
         console.log('iniciando plotagem do gráfico de equipes...');
 
         var dados = {
-            labels: ['Ferrari', 'Mac Laren', 'Red Bull', 'Mercedes'],
+            labels: [],
             datasets: [
                 {
                     label: 'Votos',
                     borderColor: '#000000',
-                    backgroundColor: ['#DC143C ', '#e67e22', '#00008B', '#696969'],
+                    backgroundColor: ['#FF0000', '#e67e22', '#0000FF', '#808080'],
                     data: []
                 }
             ]
@@ -203,7 +203,7 @@
 
     }
     function atualizarGraficoPiloto(fkPiloto, dados) {
-        fetch(`/medidas/tempo-real/${fkPiloto}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/tempo-real/piloto${fkPiloto}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
@@ -224,7 +224,7 @@
     }
 
     function atualizarGraficoEquipe(fkEquipe, dados) {
-        fetch(`/medidas/tempo-real/${fkEquipe}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/tempo-real/equipe${fkEquipe}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
