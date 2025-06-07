@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pole Position</title>
+    <link rel="stylesheet" href="simulacao.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./img/logoP1.ico">
+</head>
+<body>
+    <h2>Simule uma corrida</h2>
+    Indique seu nome: <input type="text" id="ipt_nomeUsu" placeholder="seu nome"><br>
+    Indique a quantidade de voltas que você deseja disputar: <input type="number" id="ipt_voltas" placeholder=""><br>
+    Indique um piloto para ser seu adversário: 
+    <select id="sel_piloto">
+        <option value="">Selecione um Piloto</option>
+        <option value="Charles LeClerc">Charles LeClerc</option>
+        <option value="Gabriel Bortoleto">Gabriel Bortoleto</option>
+        <option value="Lando Norris">Lando Norris</option>
+        <option value="Lewis Hamilton">Lewis Hamilton</option>
+        <option value="Max Verstappen">Max Verstappen</option>
+        <option value="Oscar Piastri">Oscar Piastri</option>
+    </select><br>
+    <button onclick="simular()">Simular Corrida</button><br><br>
+    <div id="txt"></div>
+
+    <script>
+        function simular() {
+            txt.innerHTML = '';
+            var nome = ipt_nomeUsu.value;
+            var voltas = Number(ipt_voltas.value);
+            var piloto = sel_piloto.value;
+
+            if (nome == '' || voltas == '' || piloto == '') {
+                alert('Por favor, preencha todos os campos e escolha um piloto');
+            } else if (voltas <= 0 || voltas > 30) {
+                alert('Por favor insira a quantidade de voltas entre 1 e 30');
+            } else {
+                var vitoriasUsuario = 0;
+                var vitoriasPiloto = 0;
+                var tempoTotalUsuario = 0;
+                var tempoTotalPiloto = 0;
+                txt.innerHTML += `<b>Corrida entre ${nome} e ${piloto}:</b><br>`;
+
+                for (var i = 1; i <= voltas; i++) {
+                    var tempoUsuario = (Math.random() * 5 + 3).toFixed(2);
+                    var tempoPiloto = (Math.random() * 5 + 3).toFixed(2);
+
+                    tempoTotalUsuario += Number(tempoUsuario);
+                    tempoTotalPiloto += Number(tempoPiloto);
+
+                    txt.innerHTML += `Volta ${i}: ${nome} fez ${tempoUsuario} min | ${piloto} fez ${tempoPiloto} min<br>`;
+
+                    if (tempoUsuario < tempoPiloto) {
+                        vitoriasUsuario++;
+                    } else if (tempoPiloto < tempoUsuario) {
+                        vitoriasPiloto++;
+                    }
+                }
+                txt.innerHTML += `<br><b>Resultado de vitórias por voltas:</b><br>`;
+                txt.innerHTML += `${nome} venceu ${vitoriasUsuario} volta(s).<br>`;
+                txt.innerHTML += `${piloto} venceu ${vitoriasPiloto} volta(s).<br>`;
+                if (tempoTotalUsuario < tempoTotalPiloto) {
+                    txt.innerHTML += `<br><b>Resultado da corrida pelo tempo acumulado:</b><br>`;
+                    txt.innerHTML += `Tempo total: ${nome} = ${tempoTotalUsuario.toFixed(2)} min | ${piloto} = ${tempoTotalPiloto.toFixed(2)} min<br>`;
+                    txt.innerHTML += `<br><b><i>${nome} venceu dando as ${voltas} voltas em um menor tempo!</i></b>`;
+                } else if (tempoTotalPiloto < tempoTotalUsuario) {
+                    txt.innerHTML += `<br><b>Resultado da corrida pelo tempo acumulado:</b><br>`;
+                    txt.innerHTML += `Tempo total: ${nome} = ${tempoTotalUsuario.toFixed(2)} min | ${piloto} = ${tempoTotalPiloto.toFixed(2)} min<br>`;
+                    txt.innerHTML += `<br><b><i>${piloto} venceu dando as ${voltas} voltas em um menor tempo!</i></b>`;
+                } else {
+                    txt.innerHTML += `<br><b>Resultado da corrida pelo tempo acumulado:</b><br>`;
+                    txt.innerHTML += `Ambos terminaram com o mesmo tempo total de ${tempoTotalUsuario.toFixed(2)} min!<br>`;
+                    txt.innerHTML += `<br><b><i>Empate técnico!</i></b>`;
+                }
+                ipt_nomeUsu.value = '';
+                ipt_voltas.value = '';
+                sel_piloto.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
